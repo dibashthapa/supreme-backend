@@ -34,9 +34,11 @@ mongoose.connect(config.mongoose.url, config.mongoose.options).then(() => {
 
       let response = { message: 'hello', id: '12', sender: 'sagar' };
 
+      if (message === 'namaste sir') {
+        response.message = 'namaste';
+      }
       switch (message) {
         case 'namaste sir':
-          response.message = 'namaste';
           break;
 
         default:
@@ -45,7 +47,7 @@ mongoose.connect(config.mongoose.url, config.mongoose.options).then(() => {
       console.log('received message', msg);
       setTimeout(() => {
         io.emit('receive-message', response);
-      }, 1000);
+      }, 2000);
     });
   });
 });

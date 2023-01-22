@@ -20,10 +20,6 @@ const defaultRoutes = [
     path: '/sms',
     route: smsRoute,
   },
-];
-
-const devRoutes = [
-  // routes available only in development mode
   {
     path: '/docs',
     route: docsRoute,
@@ -35,10 +31,5 @@ defaultRoutes.forEach((route) => {
 });
 
 /* istanbul ignore next */
-if (config.env === 'development') {
-  devRoutes.forEach((route) => {
-    router.use(route.path, route.route);
-  });
-}
 
 module.exports = router;
