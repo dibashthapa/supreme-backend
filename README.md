@@ -19,7 +19,7 @@ npm run dev
 docker-compose up -d
 ```
 
-## Without Docker
+### Without Docker
 
 ```sh
 npm run start
